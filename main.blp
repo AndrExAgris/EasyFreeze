@@ -1,0 +1,35 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Window {
+  default-width: 800;
+  default-height: 600;
+  title: _('EasyFreeze');
+
+  Box main {
+    orientation: vertical;
+    halign: fill;
+    valign: fill;
+
+    HeaderBar {
+      Image {
+        name: 'logo';
+        icon-name: 'snow-symbolic';
+        pixel-size: 25;
+      }
+    }
+
+    Adw.StatusPage main_page {
+      title: _('EasyFreeze');
+      description: _('Sistema de congelamento de sistemas linux');
+      vexpand: true;
+
+      Box buttons {
+        orientation: vertical;
+        halign: center;
+        valign: fill;
+      }
+    }
+  }
+}
+
