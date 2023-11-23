@@ -9,7 +9,9 @@
     - [ ] 
 
 ## Ferramentas:
-- Gnome workbench
+- <s>Gnome workbench</s>
+- Gnome Builder
+
 
 ## Inspiração:
 - https://www.udesc.br/arquivos/ceplan/id_cpmenu/1590/7172_16675008644336_1590.pdf
