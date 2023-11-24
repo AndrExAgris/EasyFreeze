@@ -27,45 +27,5 @@ class EasyfreezeWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-    def congelar(_widget):
-        dialog = Adw.MessageDialog(body="Sistema Congelado", transient_for=workbench.window)
-
-        dialog.add_response("ok", "Ok")
-        dialog.connect("response", dialog_response)
-        dialog.present()
-
-    def descongelar(_widget):
-        dialog = Adw.MessageDialog(
-            body="Sistema Descongelado", transient_for=workbench.window
-        )
-
-
-        dialog.add_response("ok", "Ok")
-
-        dialog.connect("response", dialog_response)
-        dialog.present()
-
-    def dialog_response(dialog: Adw.MessageDialog, response: str):
-        print(response)
-        dialog.close()
-
-
-    #
-    #button_box: Gtk.Box = ("buttons")
-    #
-    #congela = Gtk.Button(
-    #    label="Congelar sistema", margin_top=6, css_classes=["suggested-action"]
-    #)
-    #congela.connect("clicked", congelar)
-    #
-    #descongela = Gtk.Button(
-    #    label="Descongelar sistema", margin_top=6, css_classes=["suggested-action"]
-    #)
-    #descongela.connect("clicked", descongelar)
-    #
-    #button_box.append(congela)
-    #button_box.append(descongela)
-    #
-    #print("TOP")
 
 

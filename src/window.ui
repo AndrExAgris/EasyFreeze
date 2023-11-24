@@ -8,14 +8,17 @@
     <property name="title" translatable="true">EasyFreeze</property>
     <property name="content">
       <object class="AdwToolbarView">
+
         <child type="top">
           <object class="AdwHeaderBar" id="header_bar">
+
             <child type="start">
               <object class="GtkImage">
                 <property name="name">logo</property>
                 <property name="icon-name">changes-prevent-symbolic</property>
               </object>
             </child>
+
             <child type="end">
               <object class="GtkMenuButton">
                 <property name="primary">True</property>
@@ -25,38 +28,41 @@
               </object>
             </child>
           </object>
+
         </child>
         <property name="content">
           <object class="GtkBox" id="buttons">
             <property name="orientation">vertical</property>
             <property name="halign">fill</property>
             <property name="valign">center</property>
+            <property name="spacing">10</property>
+
+
             <child>
               <object class="AdwStatusPage" id="main_page">
-              <property name="title" translatable="true">EasyFreeze</property>
-              <property name="description" translatable="true">Sistema de congelamento de sistemas linux</property>
-              <property name="vexpand">true</property>
-          </object>
-            </child>
-            <child>
-              <object class="GtkButton">
-                <property name="label" translatable="yes">Congelar</property>
-                <!-- Add your signal handler or action here -->
+                <property name="title" translatable="true">EasyFreeze</property>
+                <property name="description" translatable="true">Sistema de congelamento de sistemas linux</property>
+                <property name="vexpand">true</property>
               </object>
             </child>
 
-            <!-- Button 2: Descongelar -->
             <child>
               <object class="GtkButton">
-                <property name="label" translatable="yes">Descongelar</property>
-                <!-- Add your signal handler or action here -->
+                <child>
+                  <object class="AdwButton">
+                    <property name="label" translatable="yes">Congelar</property>
+                  </object>
+                </child>
               </object>
             </child>
+=
+
           </object>
         </property>
       </object>
     </property>
   </template>
+
   <menu id="primary_menu">
     <section>
       <item>

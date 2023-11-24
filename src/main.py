@@ -1,6 +1,6 @@
 # main.py
 #
-# Copyright 2023 administrador
+# Copyright 2023 André de Campos
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,20 +28,18 @@ from .window import EasyfreezeWindow
 
 
 class EasyfreezeApplication(Adw.Application):
-    """The main application singleton class."""
-
     def __init__(self):
         super().__init__(application_id='Andr.EasyFreeze.app',
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
         self.create_action('about', self.on_about_action)
         self.create_action('preferences', self.on_preferences_action)
+        self.create_action("freeze", self.on_freeze_action)
 
     def do_activate(self):
         """Called when the application is activated.
 
-        We raise the application's main window, creating it if
-        necessary.
+        Raise the application's main window, creating it if necessary.
         """
         win = self.props.active_window
         if not win:
@@ -78,6 +76,26 @@ class EasyfreezeApplication(Adw.Application):
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
+
+    def on_freeze_action(self, button):
+        dialog = Adw.MessageDialog(body="Sistema Congelado")
+
+        dialog.add_response("ok", "Ok")
+        dialog.connect("response", dialog_response)
+        dialog.present()
+
+    def descongelar(self, widget):
+        dialog = Adw.MessageDialog(body="Sistema Descongelado")
+
+
+        dialog.add_response("ok", "Ok")
+
+        dialog.connect("response", dialog_response)
+        dialog.present()
+
+    def dialog_response(dialog: Adw.MessageDialog, response: str):
+        print(response)
+        dialog.close()
 
 def main(version):
     """The application's entry point."""
