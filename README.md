@@ -1,14 +1,16 @@
 # EasyFreeze
 ### Sistema de congelamento para sistemas linux (debian e forks)
 
-[Aparencia do Programa](data/img/look.png)
+## Aparencia do programa:
+![Aparencia](data/img/look.png)
 
 ## Objetivo
 - [x] congelar o diretorio "/home" dos usuarios com um script
-- [ ] fazer uma gui para o script
-- [ ] adicionar mais funcionalidades, como:
-    - [ ] dar update no diretorio "/home" sem descongelar
-    - [ ] 
+- [ ] script descongela
+- [ ] script update /home
+- [x] fazer uma gui para o script
+- [ ] linkar os scripts aos botoes da gui
+- [ ]  
 
 ## Ferramentas:
 - <s>Gnome workbench</s>
