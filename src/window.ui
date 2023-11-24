@@ -5,6 +5,7 @@
   <template class="EasyfreezeWindow" parent="AdwApplicationWindow">
     <property name="default-width">800</property>
     <property name="default-height">600</property>
+    <property name="title" translatable="true">EasyFreeze</property>
     <property name="content">
       <object class="AdwToolbarView">
         <child type="top">
@@ -26,12 +27,31 @@
           </object>
         </child>
         <property name="content">
-          <object class="AdwStatusPage" id="main_page">
-            <property name="title" translatable="true">EasyFreeze</property>
-            <property name="description" translatable="true">Sistema de congelamento de sistemas linux</property>
-            <style>
-              <class name="title-1"/>
-            </style>
+          <object class="GtkBox" id="buttons">
+            <property name="orientation">vertical</property>
+            <property name="halign">fill</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="AdwStatusPage" id="main_page">
+              <property name="title" translatable="true">EasyFreeze</property>
+              <property name="description" translatable="true">Sistema de congelamento de sistemas linux</property>
+              <property name="vexpand">true</property>
+          </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Congelar</property>
+                <!-- Add your signal handler or action here -->
+              </object>
+            </child>
+
+            <!-- Button 2: Descongelar -->
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Descongelar</property>
+                <!-- Add your signal handler or action here -->
+              </object>
+            </child>
           </object>
         </property>
       </object>
@@ -54,4 +74,4 @@
     </section>
   </menu>
 </interface>
-  
+

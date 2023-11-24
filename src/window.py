@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2023 administrador
+# Copyright 2023 André de Campos
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,48 @@ from gi.repository import Gtk
 class EasyfreezeWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'EasyfreezeWindow'
 
-    label = Gtk.Template.Child()
-
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+    def congelar(_widget):
+        dialog = Adw.MessageDialog(body="Sistema Congelado", transient_for=workbench.window)
+
+        dialog.add_response("ok", "Ok")
+        dialog.connect("response", dialog_response)
+        dialog.present()
+
+    def descongelar(_widget):
+        dialog = Adw.MessageDialog(
+            body="Sistema Descongelado", transient_for=workbench.window
+        )
+
+
+        dialog.add_response("ok", "Ok")
+
+        dialog.connect("response", dialog_response)
+        dialog.present()
+
+    def dialog_response(dialog: Adw.MessageDialog, response: str):
+        print(response)
+        dialog.close()
+
+
+    #
+    #button_box: Gtk.Box = ("buttons")
+    #
+    #congela = Gtk.Button(
+    #    label="Congelar sistema", margin_top=6, css_classes=["suggested-action"]
+    #)
+    #congela.connect("clicked", congelar)
+    #
+    #descongela = Gtk.Button(
+    #    label="Descongelar sistema", margin_top=6, css_classes=["suggested-action"]
+    #)
+    #descongela.connect("clicked", descongelar)
+    #
+    #button_box.append(congela)
+    #button_box.append(descongela)
+    #
+    #print("TOP")
+
+

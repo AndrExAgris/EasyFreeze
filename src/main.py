@@ -53,10 +53,10 @@ class EasyfreezeApplication(Adw.Application):
         about = Adw.AboutWindow(transient_for=self.props.active_window,
                                 application_name='easyfreeze',
                                 application_icon='Andr.EasyFreeze.app',
-                                developer_name='administrador',
+                                developer_name='André de Campos',
                                 version='0.1.0',
-                                developers=['administrador'],
-                                copyright='© 2023 administrador')
+                                developers=['André de Campos'],
+                                copyright='© 2023 André de CamposS')
         about.present()
 
     def on_preferences_action(self, widget, _):
@@ -83,3 +83,5 @@ def main(version):
     """The application's entry point."""
     app = EasyfreezeApplication()
     return app.run(sys.argv)
+
+
