@@ -1,0 +1,6 @@
+data/com.app.easyfreeze.desktop.in
+data/com.app.easyfreeze.metainfo.xml.in
+data/com.app.easyfreeze.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
